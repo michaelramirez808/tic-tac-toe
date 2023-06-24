@@ -15,7 +15,6 @@ function renderGameBoard(){
     let gameBoardContainer = document.getElementById("gameBoardContainer")
     gameBoardContainer.textContent = '';
     for(let i = 0; i < 9; i++){
-        let square = gameBoardArray[i];
         let squareCell = document.createElement('div')
         squareCell.textContent = gameBoardArray[i];
         squareCell.classList.add('cell')
@@ -29,8 +28,18 @@ function pickCell(){
         for(let i = 0; i < cell.length; i++){
             cell[i].addEventListener('click', function(){
             this.textContent = player1.letter;
+            pickCellP2();
         })
     }
+}
+function pickCellP2(){
+    const cell = document.getElementsByClassName('cell')
+        for(let i = 0; i < cell.length; i++){
+            cell[i].addEventListener('click', function(){
+                this.textContent = player2.letter;
+                pickCell();
+            })
+        }
 }
 
 renderGameBoard();
