@@ -21,10 +21,16 @@ function renderGameBoard(){
         squareCell.classList.add('cell')
         gameBoardContainer.appendChild(squareCell);
     }
+    pickCell();
 }
 
 function pickCell(){
-    
+    const cell = document.getElementsByClassName('cell')
+        for(let i = 0; i < cell.length; i++){
+            cell[i].addEventListener('click', function(){
+            this.textContent = player1.letter;
+        })
+    }
 }
 
 renderGameBoard();
