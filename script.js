@@ -1,4 +1,4 @@
-let gameBoardArray = ['X', 'X', 'X', 'O', 'O', 'O', 'X', 'X', 'X']
+let gameBoardArray = []
 
 
 const player1 = {
@@ -21,6 +21,10 @@ function renderGameBoard(){
         squareCell.classList.add('cell')
         gameBoardContainer.appendChild(squareCell);
     }
+}
+
+function pickCell(){
+    
 }
 
 renderGameBoard();

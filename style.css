@@ -1,3 +1,19 @@
 #gameBoardContainer{
+    display: grid;
+    gap: 0;
+    grid-template-columns: repeat(3, 1fr);
+    height: 100%;
+    width: 50%;
+}
+#gameBoardWrapper{
     display: flex;
+    justify-content: center;
+}
+.cell{
+    display: flex;
+    border: solid black 1px;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
 }
