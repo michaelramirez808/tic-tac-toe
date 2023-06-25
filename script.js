@@ -1,14 +1,14 @@
-let gameBoardArray = []
+let gameBoardArray = ['', '', '', '', '', '', '', '', '',]
 
 
 const player1 = {
     letter: "X",
-    turn: "1",
+    turn: true,
 };
 
 const player2 = {
     letter: "O",
-    turn: "2",
+    turn: false,
 };
 
 function renderGameBoard(){
@@ -19,27 +19,20 @@ function renderGameBoard(){
         squareCell.textContent = gameBoardArray[i];
         squareCell.classList.add('cell')
         gameBoardContainer.appendChild(squareCell);
-    }
-    pickCell();
-}
-
-function pickCell(){
-    const cell = document.getElementsByClassName('cell')
-        for(let i = 0; i < cell.length; i++){
-            cell[i].addEventListener('click', function(){
-            this.textContent = player1.letter;
-            pickCellP2();
-        })
-    }
-}
-function pickCellP2(){
-    const cell = document.getElementsByClassName('cell')
-        for(let i = 0; i < cell.length; i++){
-            cell[i].addEventListener('click', function(){
+        squareCell.addEventListener('click', function(){
+            if (this.textContent === ''){
+            if (player1.turn){
+                this.textContent = player1.letter;
+                player1.turn = false;
+                player2.turn = true;
+            } else{
                 this.textContent = player2.letter;
-                pickCell();
-            })
+                player1.turn = true;
+                player2.turn = false;
+            }   
         }
+    });
+};
 }
 
 renderGameBoard();
