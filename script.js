@@ -24,10 +24,12 @@ function renderGameBoard(){
             if (player1.turn){
                 this.textContent = player1.letter;
                 player1.turn = false;
+                gameBoardArray[i] = player1.letter;
                 player2.turn = true;
             } else{
                 this.textContent = player2.letter;
                 player1.turn = true;
+                gameBoardArray[i] = player2.letter;
                 player2.turn = false;
 
                 checkWin();
@@ -46,10 +48,10 @@ function checkWin(){
     ]
     for(let condition of winningCondition){
         let [a,b,c] = condition;
-        if (gameBoardArray[a] && gameBoardArray[a] === gameBoardArray[b] && gameBoardArray[a] === gameBoardArray[c])
-        console.log('winner')
+        if (gameBoardArray[a] && gameBoardArray[a] === gameBoardArray[b] && gameBoardArray[a] === gameBoardArray[c]){
         displayMessage(`Player ${gameBoardArray[a]} wins!`);
-         break;
+        return;
+        }
     }
 }
 
