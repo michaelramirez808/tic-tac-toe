@@ -39,7 +39,7 @@ function renderGameBoard(){
 
                 checkTie();
                 checkWin();
-                
+
                 player2.turn = false;
 
             }   
@@ -61,6 +61,17 @@ function checkWin(){
         displayMessage(`Player ${gameBoardArray[a]} wins!`);
         }
     }
+}
+
+let resetButton = document.getElementById('reset');
+resetButton.addEventListener('click', resetGameBoard);
+
+function resetGameBoard(){
+    gameBoardArray = ['', '', '', '', '', '', '', '', '',]
+    player1.turn = true;
+    player2.turn = false;
+    displayMessage('');
+    renderGameBoard();
 }
 
 function displayMessage(message){
