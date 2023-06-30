@@ -38,3 +38,20 @@ html, body{
     height: 100%;
     border: white solid 1px;
 }
+#message{
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: white;
+}
+#reset{
+    color: white;
+    background-color: #0f172a;
+    border: solid white 1px;
+    margin-top: 3%;
+    width: 4%;
+    height: 3%;
+}
+#reset:hover{
+    cursor: pointer;
+}
