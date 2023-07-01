@@ -55,3 +55,6 @@ html, body{
 #reset:hover{
     cursor: pointer;
 }
+#reset:active{
+    background-color: black;
+}
